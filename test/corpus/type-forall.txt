@@ -1,9 +1,9 @@
 ================================================================================
-lambda expression
+forall type
 ================================================================================
 
-hi :: Int
-hi = \(x :: Int) @(xs) -> 42
+hi :: forall a b. Int
+hi = 42
 
 --------------------------------------------------------------------------------
 
@@ -12,21 +12,15 @@ hi = \(x :: Int) @(xs) -> 42
     (tysig
       (varid)
       (type
-        (tycon
-          (con
-            (con_nm)))))
-    (variable
-      (varid))
-    (expr
-      (expr_lambda
-        (value_lambda_bndr
-          (varid)
+        (type_forall
+          (varty)
+          (varty)
           (type
             (tycon
               (con
-                (con_nm)))))
-        (type_lambda_bndr
-          (varty))
-        (expr
-          (literal
-            (int_lit)))))))
+                (con_nm)))))))
+    (variable
+      (varid))
+    (expr
+      (literal
+        (int_lit)))))

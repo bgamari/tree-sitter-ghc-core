@@ -24,9 +24,20 @@ module.exports = {
     ),
   ),
 
+  string_lit: _ => seq(
+      '"',
+      repeat(choice(
+        /[^\\"\n]/,
+        /\\(\^)?./,
+        /\\\n\s*\\/,
+      )),
+      '"',
+  ),
+
   literal: $ => choice(
       $.int_lit,
       $.float_lit,
       $.char_lit, 
+      $.string_lit,
   ),
 }

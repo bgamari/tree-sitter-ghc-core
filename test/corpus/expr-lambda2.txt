@@ -1,9 +1,9 @@
 ================================================================================
-lambda expression
+Lambda expression 2
 ================================================================================
 
-hi :: Int
-hi = \(x :: Int) @(xs) -> 42
+test :: Int
+test = \ _ (x :: Int) (y :: Binary w) -> 42
 
 --------------------------------------------------------------------------------
 
@@ -19,14 +19,22 @@ hi = \(x :: Int) @(xs) -> 42
       (varid))
     (expr
       (expr_lambda
+        (lambda_wildcard)
         (value_lambda_bndr
           (varid)
           (type
             (tycon
               (con
                 (con_nm)))))
-        (type_lambda_bndr
-          (varty))
+        (value_lambda_bndr
+          (varid)
+          (type
+            (type_app
+              (tycon
+                (con
+                  (con_nm)))
+              (type
+                (varty)))))
         (expr
           (literal
             (int_lit)))))))

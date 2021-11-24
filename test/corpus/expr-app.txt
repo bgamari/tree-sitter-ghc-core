@@ -1,9 +1,9 @@
 ================================================================================
-lambda expression
+application expression
 ================================================================================
 
 hi :: Int
-hi = \(x :: Int) @(xs) -> 42
+hi = hi 42 "hi" @a
 
 --------------------------------------------------------------------------------
 
@@ -18,15 +18,14 @@ hi = \(x :: Int) @(xs) -> 42
     (variable
       (varid))
     (expr
-      (expr_lambda
-        (value_lambda_bndr
-          (varid)
-          (type
-            (tycon
-              (con
-                (con_nm)))))
-        (type_lambda_bndr
-          (varty))
+      (fun_app
+        (variable
+          (varid))
         (expr
           (literal
-            (int_lit)))))))
+            (int_lit)))
+        (expr
+          (literal
+            (string_lit)))
+        (type
+          (varty))))))
