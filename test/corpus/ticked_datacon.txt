@@ -12,21 +12,17 @@ hi = 42
     (tysig
       (varid)
       (type
-        (type_app
-          (tycon
-            (con
-              (con_nm)))
+        (tycon
+          (con
+            (con_nm)))
+        (type_parens
           (type
-            (type_parens
-              (type
-                (type_app
-                  (ticked_datacon
-                    (con
-                      (con_nm)))
-                  (type
-                    (ticked_datacon
-                      (con
-                        (con_nm)))))))))))
+            (ticked_datacon
+              (con
+                (con_nm)))
+            (ticked_datacon
+              (con
+                (con_nm)))))))
     (variable
       (varid))
     (expr

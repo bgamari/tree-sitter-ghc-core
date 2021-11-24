@@ -19,4 +19,11 @@ module.exports = grammar({
         ...pat,
         ...idinfo,
     },
+    precedences: _ => [
+        ['fun-type', 'type'],
+    ],
+    conflicts: $ => [
+        [$._type1, $._type_app],
+        [$._type_app],
+    ],
 })

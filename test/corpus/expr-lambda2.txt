@@ -29,12 +29,10 @@ test = \ _ (x :: Int) (y :: Binary w) -> 42
         (value_lambda_bndr
           (varid)
           (type
-            (type_app
-              (tycon
-                (con
-                  (con_nm)))
-              (type
-                (varty)))))
+            (tycon
+              (con
+                (con_nm)))
+            (varty)))
         (expr
           (literal
             (int_lit)))))))

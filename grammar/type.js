@@ -14,22 +14,34 @@ module.exports = {
         $.type
     ),
 
-    _atype: $ => choice(
+    _type2: $ => choice(
         $.varty,
         $.tycon,
         $.ticked_datacon,
         $.literal,
-        $.type_forall,
         $.type_parens,
     ),
 
-    type_app: $ => prec.left(
-        seq($._atype, repeat1($.type))
+    _type_app: $ => seq($._type2, repeat1($._type2)),
+
+    _type1: $ => choice(
+        $._type2,
+        $._type_app,
     ),
 
-    type: $ => prec.left(choice(
-        $._atype,
-        $.type_app,
+    context: $ => 'todo',
+
+    fun_type: $ => prec('fun-type', seq(
+        $._type1,
+        '->',
+        $.type
+    )),
+
+    type: $ => prec.left('type', choice(
+        $.type_forall,
+        $.context,
+        $.fun_type,
+        $._type1,
     )),
 }
 
