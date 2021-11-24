@@ -13,27 +13,27 @@ module.exports = {
   con: $ => qualified($, $.con_nm),
   variable: $ => qualified($, $.varid),
 
-  _case: $ => seq(
+  expr_case: $ => seq(
       'case',
       $.expr,
       'of',
       braces($._case_alts),
   ),
-  _case_alts: $ => sep1(',', $._case_alt),
-  _case_alt: $ => seq(
+  _case_alts: $ => sep1(',', $.case_alt),
+  case_alt: $ => seq(
       $.pat,
       '->',
       braces($.expr),
   ),
 
-  _let: $ => seq(
+  expr_let: $ => seq(
       'let',
       braces($.binding),
       'in',
       $.expr
   ),
 
-  _cast: $ => seq(
+  expr_cast: $ => seq(
       $.expr,
       $.coercion
   ),
@@ -43,24 +43,22 @@ module.exports = {
   ),
 
   _lambda_bndr: $ => choice(
-      $._value_lambda_bndr,
-      $._type_lambda_bndr
+      $.value_lambda_bndr,
+      $.type_lambda_bndr
   ),
 
-  _value_lambda_bndr: $ => parens(seq(
+  value_lambda_bndr: $ => parens(seq(
       $.varid,
       '::',
       $.type
   )),
 
-  _type_lambda_bndr: $ => parens(seq(
+  type_lambda_bndr: $ => seq(
       '@',
-      $.varty,
-      '::',
-      $.type
-  )),
+      parens($.varty),
+  ),
 
-  _lambda: $ => seq(
+  expr_lambda: $ => seq(
       '\\',
       repeat1($._lambda_bndr),
       '->',
@@ -69,12 +67,12 @@ module.exports = {
 
   _aexpr: $ => choice(
     parens($._aexpr),
+    $.expr_lambda,
     $.literal,
     $.variable,
-    $._case,
-    $._let,
-    $._cast,
-    $._lambda,
+    $.expr_case,
+    $.expr_let,
+    $.expr_cast,
   ),
 
   expr: $ => choice(

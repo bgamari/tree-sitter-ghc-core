@@ -1,0 +1,33 @@
+================================================================================
+lambda expression
+================================================================================
+
+hi :: Int
+hi = \(x :: Int) @(xs) -> 42
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binding
+    (tysig
+      (varid)
+      (type
+        (tycon
+          (con
+            (con_nm)))))
+    (variable
+      (varid))
+    (expr
+      (expr_lambda
+        (value_lambda_bndr
+          (varid)
+          (type
+            (tycon
+              (con
+                (con_nm)))))
+        (type_lambda_bndr
+          (varty
+            (varid)))
+        (expr
+          (literal
+            (int_lit)))))))
