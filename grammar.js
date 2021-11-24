@@ -4,6 +4,7 @@ const type = require('./grammar/type.js')
 const coercion = require('./grammar/coercion.js')
 const bind = require('./grammar/bind.js')
 const pat = require('./grammar/pat.js')
+const idinfo = require('./grammar/idinfo.js')
 
 module.exports = grammar({
     name: 'ghccore',
@@ -16,5 +17,6 @@ module.exports = grammar({
         ...coercion,
         ...bind,
         ...pat,
+        ...idinfo,
     },
 })

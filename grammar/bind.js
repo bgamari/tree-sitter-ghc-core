@@ -7,9 +7,6 @@ module.exports = {
         $.type
     ),
 
-    idinfo: $ => brackets(seq(',', $.idinfo_item)),
-    idinfo_item: $ => choice(),
-
     binding: $ => seq(
         optional($.tysig),
         optional($.idinfo),
