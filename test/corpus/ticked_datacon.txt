@@ -1,0 +1,34 @@
+================================================================================
+ticked datacon
+================================================================================
+
+hi :: C ('Cons 'False)
+hi = 42
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binding
+    (tysig
+      (varid)
+      (type
+        (type_app
+          (tycon
+            (con
+              (con_nm)))
+          (type
+            (type_parens
+              (type
+                (type_app
+                  (ticked_datacon
+                    (con
+                      (con_nm)))
+                  (type
+                    (ticked_datacon
+                      (con
+                        (con_nm)))))))))))
+    (variable
+      (varid))
+    (expr
+      (literal
+        (int_lit)))))
