@@ -35,10 +35,11 @@ module.exports = {
       $.expr,
   ),
 
-  expr_cast: $ => seq(
+  expr_cast: $ => prec(1, seq(
       $.expr,
-      $.coercion
-  ),
+      '`cast`',
+      $.coercion_and_kind,
+  )),
 
   _app: $ => seq(
       $.expr,
