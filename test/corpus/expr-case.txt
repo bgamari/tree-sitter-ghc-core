@@ -1,0 +1,40 @@
+================================================================================
+case expression
+================================================================================
+
+hi :: Int
+hi = case 42 of {
+    __DEFAULT -> { 42 }
+    Just a -> { 5 }
+  }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binding
+    (tysig
+      (varid)
+      (type
+        (tycon
+          (con
+            (con_nm)))))
+    (variable
+      (varid))
+    (expr
+      (expr_case
+        (expr
+          (literal
+            (int_lit)))
+        (case_alt
+          (default_pat)
+          (expr
+            (literal
+              (int_lit))))
+        (case_alt
+          (pat
+            (con_pat
+              (con_nm)
+              (varid)))
+          (expr
+            (literal
+              (int_lit))))))))

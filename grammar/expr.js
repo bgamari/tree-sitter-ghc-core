@@ -17,14 +17,16 @@ module.exports = {
       'case',
       $.expr,
       'of',
-      braces($._case_alts),
+      braces(repeat($.case_alt)),
   ),
-  _case_alts: $ => sep1(',', $.case_alt),
+
   case_alt: $ => seq(
-      $.pat,
+      choice($.default_pat, $.pat),
       '->',
       braces($.expr),
   ),
+
+  default_pat: _ => '__DEFAULT',
 
   expr_let: $ => seq(
       'let',
