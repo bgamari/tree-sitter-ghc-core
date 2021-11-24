@@ -23,4 +23,10 @@ module.exports = {
       /'\\[^ ]*'/,
     ),
   ),
+
+  literal: $ => choice(
+      $.int_lit,
+      $.float_lit,
+      $.char_lit, 
+  ),
 }

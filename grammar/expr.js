@@ -7,6 +7,7 @@ const {parens, braces, sep1} = require('./util.js')
 
 module.exports = {
   varid: _ => /[_a-z\$](\w|'|\$)*#?/,
+  varty: $ => $.varid,
   module_name: _ => /[A-Z](\w|\.)/,
   con_nm: _ => /[A-Z](\w)*/,
   con: $ => qualified($, $.con_nm),
@@ -41,12 +42,39 @@ module.exports = {
       $.expr,
   ),
 
+  _lambda_bndr: $ => choice(
+      $._value_lambda_bndr,
+      $._type_lambda_bndr
+  ),
+
+  _value_lambda_bndr: $ => parens(seq(
+      $.varid,
+      '::',
+      $.type
+  )),
+
+  _type_lambda_bndr: $ => parens(seq(
+      '@',
+      $.varty,
+      '::',
+      $.type
+  )),
+
+  _lambda: $ => seq(
+      '\\',
+      repeat1($._lambda_bndr),
+      '->',
+      $.expr
+  ),
+
   _aexpr: $ => choice(
     parens($._aexpr),
+    $.literal,
     $.variable,
     $._case,
     $._let,
     $._cast,
+    $._lambda,
   ),
 
   expr: $ => choice(
