@@ -10,6 +10,8 @@ module.exports = {
         seq('Arity=', $.arity),
         seq('Cpr=', $.cpr_sig),
         seq('Unf=', $.unfolding),
+        seq('Occ=', /[^\]]/),
+        seq('OS=OneSHot'),
     ),
 
     arity: _ => /[\d]+/,

@@ -32,7 +32,7 @@ module.exports = {
       'let',
       braces($.binding),
       'in',
-      $.expr
+      $.expr,
   ),
 
   expr_cast: $ => seq(
@@ -44,12 +44,7 @@ module.exports = {
       $.expr,
   ),
 
-  occinfo: $ => brackets(seq(
-      'Occ=',
-      /[^\]]/,
-  )),
-
-  lambda_wildcard: $ => seq('_', optional($.occinfo)),
+  lambda_wildcard: $ => seq('_', optional($.idinfo)),
 
   _lambda_bndr: $ => choice(
       $.lambda_wildcard,
@@ -59,7 +54,7 @@ module.exports = {
 
   value_lambda_bndr: $ => parens(seq(
       $.varid,
-      optional($.occinfo),
+      optional($.idinfo),
       '::',
       $.type,
   )),
