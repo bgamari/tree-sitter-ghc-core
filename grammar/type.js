@@ -3,6 +3,8 @@ const {parens, braces, sep1} = require('./util.js')
 module.exports = {
     tycon: $ => $.con,
 
+    ticked_datacon: $ => seq("'", $.con),
+
     type_parens: $ => parens($.type),
 
     type_forall: $ => seq(
@@ -15,6 +17,7 @@ module.exports = {
     _atype: $ => choice(
         $.varty,
         $.tycon,
+        $.ticked_datacon,
         $.literal,
         $.type_forall,
         $.type_parens,
