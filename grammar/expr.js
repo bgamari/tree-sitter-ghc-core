@@ -13,10 +13,13 @@ module.exports = {
   // This is a bit of a lie but meh
   _modid: _ => /[A-Z](\w|_)+\./,
   _qualifying_module: $ => repeat1($._modid),
-  conid: _ => /[A-Z](\w|')*#?/,
+  conid: _ => choice(
+      /[A-Z](\w|')*#?/,
+      '()',
+  ),
   datacon: $ => seq(
       optional($._qualifying_module),
-      $.conid
+      $.conid,
   ),
   variable: $ => mb_qualified($, $.varid),
 

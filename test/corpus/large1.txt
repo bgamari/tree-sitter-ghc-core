@@ -152,26 +152,33 @@ GHCi.Message.$dGBinaryPut80
                             (varty))))
                       (ERROR)
                       (coercion_and_kind
-                        (co_axiom
-                          (tycon
-                            (datacon
-                              (conid))))
-                        (co_refl
-                          (type
-                            (tycon))
-                          (role))
+                        (coercion
+                          (co_axiom
+                            (tycon
+                              (datacon
+                                (conid))))
+                          (co_refl
+                            (type
+                              (tycon
+                                (datacon
+                                  (conid))))
+                            (role)))
                         (coercion_kind
                           (type
                             (tycon
                               (datacon
                                 (conid)))
-                            (tycon))
+                            (tycon
+                              (datacon
+                                (conid))))
                           (eq_rel)
                           (type
                             (tycon
                               (datacon
                                 (conid)))
-                            (tycon)))))
+                            (tycon
+                              (datacon
+                                (conid)))))))
                     (expr
                       (varid))
                     (ERROR
@@ -198,9 +205,12 @@ GHCi.Message.$dGBinaryPut80
                 (fun_app
                   (conid)
                   (type
-                    (tycon)
-                    (ERROR)
-                    (tycon))
+                    (tycon
+                      (datacon
+                        (conid)))
+                    (tycon
+                      (datacon
+                        (conid))))
                   (expr
                     (expr_cast
                       (expr
@@ -225,10 +235,11 @@ GHCi.Message.$dGBinaryPut80
                                           (expr
                                             (varid))
                                           (coercion_and_kind
-                                            (co_axiom
-                                              (tycon
-                                                (datacon
-                                                  (conid))))
+                                            (coercion
+                                              (co_axiom
+                                                (tycon
+                                                  (datacon
+                                                    (conid)))))
                                             (coercion_kind
                                               (type
                                                 (tycon
@@ -269,44 +280,45 @@ GHCi.Message.$dGBinaryPut80
                                                 (expr
                                                   (varid))
                                                 (coercion_and_kind
-                                                  (co_axiom
-                                                    (tycon
-                                                      (datacon
-                                                        (conid))))
-                                                  (co_refl
-                                                    (type
-                                                      (tycon))
-                                                    (role))
-                                                  (co_refl
-                                                    (type
+                                                  (coercion
+                                                    (co_axiom
                                                       (tycon
                                                         (datacon
                                                           (conid))))
-                                                    (role))
-                                                  (co_refl
-                                                    (type
-                                                      (ticked_datacon
-                                                        (datacon
-                                                          (conid)))
-                                                      (literal
-                                                        (string_lit))
-                                                      (ticked_datacon
-                                                        (datacon
-                                                          (conid)))
-                                                      (ticked_datacon
-                                                        (datacon
-                                                          (conid))))
-                                                    (role))
-                                                  (co_refl
-                                                    (type
-                                                      (tycon
-                                                        (datacon
-                                                          (conid))))
-                                                    (role))
-                                                  (co_refl
-                                                    (type
-                                                      (varty))
-                                                    (role))
+                                                    (co_refl
+                                                      (type
+                                                        (tycon))
+                                                      (role))
+                                                    (co_refl
+                                                      (type
+                                                        (tycon
+                                                          (datacon
+                                                            (conid))))
+                                                      (role))
+                                                    (co_refl
+                                                      (type
+                                                        (ticked_datacon
+                                                          (datacon
+                                                            (conid)))
+                                                        (literal
+                                                          (string_lit))
+                                                        (ticked_datacon
+                                                          (datacon
+                                                            (conid)))
+                                                        (ticked_datacon
+                                                          (datacon
+                                                            (conid))))
+                                                      (role))
+                                                    (co_refl
+                                                      (type
+                                                        (tycon
+                                                          (datacon
+                                                            (conid))))
+                                                      (role))
+                                                    (co_refl
+                                                      (type
+                                                        (varty))
+                                                      (role)))
                                                   (coercion_kind
                                                     (type
                                                       (tycon
@@ -350,13 +362,15 @@ GHCi.Message.$dGBinaryPut80
                                                   (expr
                                                     (varid))))))))))))
                               (ERROR)
-                              (ERROR)
                               (coercion_and_kind
-                                (co_axiom
-                                  (tycon
-                                    (datacon
-                                      (conid))))
-                                (ERROR)
+                                (coercion
+                                  (co_sym
+                                    (co_parens
+                                      (coercion
+                                        (co_axiom
+                                          (tycon
+                                            (datacon
+                                              (conid))))))))
                                 (coercion_kind
                                   (type
                                     (type_parens
@@ -379,26 +393,34 @@ GHCi.Message.$dGBinaryPut80
                                     (tycon
                                       (datacon
                                         (conid))))))))))
-                      (ERROR)
                       (coercion_and_kind
-                        (co_axiom
-                          (tycon
-                            (datacon
-                              (conid))))
-                        (ERROR)
-                        (co_refl
-                          (type
-                            (tycon))
-                          (role))
+                        (coercion
+                          (co_sym
+                            (co_parens
+                              (coercion
+                                (co_axiom
+                                  (tycon
+                                    (datacon
+                                      (conid))))))
+                            (co_refl
+                              (type
+                                (tycon
+                                  (datacon
+                                    (conid))))
+                              (role))))
                         (coercion_kind
                           (type
                             (tycon
                               (datacon
                                 (conid)))
-                            (tycon))
+                            (tycon
+                              (datacon
+                                (conid))))
                           (eq_rel)
                           (type
                             (tycon
                               (datacon
                                 (conid)))
-                            (tycon)))))))))))))))
+                            (tycon
+                              (datacon
+                                (conid)))))))))))))))))

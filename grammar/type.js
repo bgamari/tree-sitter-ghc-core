@@ -2,7 +2,6 @@ const {parens, braces, sep1} = require('./util.js')
 
 module.exports = {
     tycon: $ => choice(
-        '()',
         '*',
         $.datacon,
     ),

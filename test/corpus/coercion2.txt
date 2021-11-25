@@ -27,10 +27,11 @@ hi = x `cast` (Data.ByteString.Builder.Internal.N:Builder[0]
         (expr
           (varid))
         (coercion_and_kind
-          (co_axiom
-            (tycon
-              (datacon
-                (conid))))
+          (coercion
+            (co_axiom
+              (tycon
+                (datacon
+                  (conid)))))
           (coercion_kind
             (type
               (tycon

@@ -20,22 +20,13 @@ module.exports = {
         '~N#',
     ),
 
-    coercion_kind: $ => seq(
-        $.type,
-        $.eq_rel,
-        $.type
-    ),
-
-    coercion_and_kind: $ => parens(seq(
-        $._coercion1,
-        '::',
-        $.coercion_kind,
-    )),
+    co_parens: $ => parens($.coercion),
 
     _coercion2: $ => choice(
         $.co_sym,
         $.co_refl,
         $.co_axiom,
+        $.co_parens,
     ),
 
     _co_app: $ => prec.left('app-co', seq($._coercion2, repeat1($._coercion1))),
@@ -43,6 +34,18 @@ module.exports = {
     _coercion1: $ => prec('co', choice(
         $._co_app,
         $._coercion2
+    )),
+
+    coercion_kind: $ => seq(
+        $.type,
+        $.eq_rel,
+        $.type
+    ),
+
+    coercion_and_kind: $ => parens(seq(
+        $.coercion,
+        '::',
+        $.coercion_kind,
     )),
 
     coercion: $ => $._coercion1,
