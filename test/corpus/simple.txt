@@ -2,19 +2,20 @@
 simple binding
 ================================================================================
 
-hi :: Int
-hi = 42
+Hi.hi :: Int
+Hi.hi = 42
 
 --------------------------------------------------------------------------------
 
 (source_file
   (binding
     (tysig
-      (varid)
+      (variable
+        (varid))
       (type
         (tycon
-          (con
-            (con_nm)))))
+          (datacon
+            (conid)))))
     (variable
       (varid))
     (expr

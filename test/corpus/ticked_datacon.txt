@@ -10,19 +10,20 @@ hi = 42
 (source_file
   (binding
     (tysig
-      (varid)
+      (variable
+        (varid))
       (type
         (tycon
-          (con
-            (con_nm)))
+          (datacon
+            (conid)))
         (type_parens
           (type
             (ticked_datacon
-              (con
-                (con_nm)))
+              (datacon
+                (conid)))
             (ticked_datacon
-              (con
-                (con_nm)))))))
+              (datacon
+                (conid)))))))
     (variable
       (varid))
     (expr

@@ -2,9 +2,9 @@ const {brackets} = require('./util.js')
 
 module.exports = {
     tysig: $ => seq(
-        $.varid,
+        $.variable,
         '::',
-        $.type
+        $.type,
     ),
 
     binding: $ => seq(

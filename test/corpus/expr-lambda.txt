@@ -10,11 +10,12 @@ hi = \(x :: Int) @(xs) -> 42
 (source_file
   (binding
     (tysig
-      (varid)
+      (variable
+        (varid))
       (type
         (tycon
-          (con
-            (con_nm)))))
+          (datacon
+            (conid)))))
     (variable
       (varid))
     (expr
@@ -23,8 +24,8 @@ hi = \(x :: Int) @(xs) -> 42
           (varid)
           (type
             (tycon
-              (con
-                (con_nm)))))
+              (datacon
+                (conid)))))
         (type_lambda_bndr
           (varty))
         (expr

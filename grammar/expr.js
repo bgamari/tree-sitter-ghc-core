@@ -1,17 +1,24 @@
 const
-qualified = ($, rule) => choice(
-    seq($.module_name, '.', rule),
-    rule
+qualified = ($, rule) => seq($._qualifying_module, rule)
+mb_qualified = ($, rule) => choice(
+    rule,
+    qualified($, rule),
 )
+
 const {parens, braces, sep1} = require('./util.js')
 
 module.exports = {
   varid: _ => /[_a-z\$](\w|'|\$)*#?/,
-  varty: $ => /[_a-z\$](\w|'|\$)*#?/,
-  module_name: _ => /[A-Z](\w|\.)/,
-  con_nm: _ => /[A-Z](\w)*/,
-  con: $ => qualified($, $.con_nm),
-  variable: $ => qualified($, $.varid),
+  varty: _ => /[_a-z\$](\w|'|\$)*#?/,
+  // This is a bit of a lie but meh
+  _modid: _ => /[A-Z](_|\w)+\./,
+  _qualifying_module: $ => repeat1($._modid),
+  conid: _ => /[A-Z](\w|')*#?/,
+  datacon: $ => seq(
+      optional($._qualifying_module),
+      $.conid
+  ),
+  variable: $ => mb_qualified($, $.varid),
 
   expr_case: $ => seq(
       'case',

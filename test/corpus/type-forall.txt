@@ -10,15 +10,16 @@ hi = 42
 (source_file
   (binding
     (tysig
-      (varid)
+      (variable
+        (varid))
       (type
         (type_forall
           (varty)
           (varty)
           (type
             (tycon
-              (con
-                (con_nm)))))))
+              (datacon
+                (conid)))))))
     (variable
       (varid))
     (expr

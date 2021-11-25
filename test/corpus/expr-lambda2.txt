@@ -10,11 +10,12 @@ test = \ _ (x :: Int) (y :: Binary w) -> 42
 (source_file
   (binding
     (tysig
-      (varid)
+      (variable
+        (varid))
       (type
         (tycon
-          (con
-            (con_nm)))))
+          (datacon
+            (conid)))))
     (variable
       (varid))
     (expr
@@ -24,14 +25,14 @@ test = \ _ (x :: Int) (y :: Binary w) -> 42
           (varid)
           (type
             (tycon
-              (con
-                (con_nm)))))
+              (datacon
+                (conid)))))
         (value_lambda_bndr
           (varid)
           (type
             (tycon
-              (con
-                (con_nm)))
+              (datacon
+                (conid)))
             (varty)))
         (expr
           (literal

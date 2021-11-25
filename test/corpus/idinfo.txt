@@ -12,11 +12,12 @@ test = 42
 (source_file
   (binding
     (tysig
-      (varid)
+      (variable
+        (varid))
       (type
         (tycon
-          (con
-            (con_nm)))))
+          (datacon
+            (conid)))))
     (idinfo
       (idinfo_item)
       (idinfo_item

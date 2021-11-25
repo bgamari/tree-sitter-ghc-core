@@ -10,11 +10,12 @@ hi = hi 42 "hi" @a
 (source_file
   (binding
     (tysig
-      (varid)
+      (variable
+        (varid))
       (type
         (tycon
-          (con
-            (con_nm)))))
+          (datacon
+            (conid)))))
     (variable
       (varid))
     (expr

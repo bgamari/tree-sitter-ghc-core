@@ -1,9 +1,9 @@
 const {parens, braces, sep1} = require('./util.js')
 
 module.exports = {
-    tycon: $ => $.con,
+    tycon: $ => $.datacon,
 
-    ticked_datacon: $ => seq("'", $.con),
+    ticked_datacon: $ => seq("'", $.datacon),
 
     type_parens: $ => parens($.type),
 

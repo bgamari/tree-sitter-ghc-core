@@ -1,6 +1,6 @@
 module.exports = {
     con_pat: $ => seq(
-        $.con_nm,
+        $.conid,
         repeat($.varid),
     ),
 

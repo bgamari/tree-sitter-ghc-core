@@ -13,11 +13,12 @@ hi = case 42 of {
 (source_file
   (binding
     (tysig
-      (varid)
+      (variable
+        (varid))
       (type
         (tycon
-          (con
-            (con_nm)))))
+          (datacon
+            (conid)))))
     (variable
       (varid))
     (expr
@@ -33,7 +34,7 @@ hi = case 42 of {
         (case_alt
           (pat
             (con_pat
-              (con_nm)
+              (conid)
               (varid)))
           (expr
             (literal
