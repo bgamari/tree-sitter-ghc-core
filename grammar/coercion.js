@@ -18,6 +18,7 @@ module.exports = {
     eq_rel: $ => choice(
         '~R#',
         '~N#',
+        'GHC.Prim.~#',
     ),
 
     co_parens: $ => parens($.coercion),

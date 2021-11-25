@@ -89,8 +89,8 @@ module.exports = {
   ),
 
   _type_arg: $ => seq('@', $._type2),
-  _co_arg: $ => seq('@~', $._coercion2),
-  _app_arg: $ => prec(2, choice($._type_arg, $._expr3)),
+  _co_arg: $ => seq('@~', $.coercion_and_kind),
+  _app_arg: $ => prec(2, choice($._type_arg, $._co_arg, $._expr3)),
   _fun_app: $ => seq($._expr4, repeat1($._app_arg)),
 
   _expr3: $ => choice(
