@@ -124,8 +124,7 @@ GHCi.Message.$dGBinaryPut80
         (expr
           (expr_case
             (expr
-              (variable
-                (varid)))
+              (varid))
             (varid)
             (ERROR
               (default_pat)
@@ -146,8 +145,7 @@ GHCi.Message.$dGBinaryPut80
                     (expr_cast
                       (expr
                         (fun_app
-                          (variable
-                            (varid))
+                          (varid)
                           (type
                             (varty)
                             (varty)
@@ -175,8 +173,7 @@ GHCi.Message.$dGBinaryPut80
                                 (conid)))
                             (tycon)))))
                     (expr
-                      (variable
-                        (varid)))
+                      (varid))
                     (ERROR
                       (UNEXPECTED 'D')
                       (UNEXPECTED 'B')
@@ -187,224 +184,221 @@ GHCi.Message.$dGBinaryPut80
                       (literal
                         (int_lit)))
                     (expr
-                      (variable
-                        (varid)))
+                      (varid))
                     (expr
-                      (variable
-                        (varid)))
+                      (varid))
                     (ERROR
                       (UNEXPECTED 'w'))
                     (expr
                       (literal
                         (int_lit)))
                     (expr
-                      (variable
-                        (varid))))))
-              (ERROR
-                (UNEXPECTED 'a')
-                (UNEXPECTED 'H')
-                (UNEXPECTED 'u'))
-              (expr_cast
-                (expr
-                  (expr_parens
-                    (expr_parens
-                      (expr_cast
-                        (expr
-                          (fun_app
-                            (expr_lambda
-                              (type_lambda_bndr
-                                (varty))
-                              (value_lambda_bndr
-                                (varid)
-                                (type
-                                  (tycon
-                                    (datacon
-                                      (conid)))
-                                  (varty)))
+                      (varid)))))
+              (expr
+                (fun_app
+                  (conid)
+                  (type
+                    (tycon)
+                    (ERROR)
+                    (tycon))
+                  (expr
+                    (expr_cast
+                      (expr
+                        (expr_parens
+                          (expr_parens
+                            (expr_cast
                               (expr
-                                (expr_parens
-                                  (expr_cast
-                                    (expr
-                                      (variable
-                                        (varid)))
-                                    (coercion_and_kind
-                                      (co_axiom
+                                (fun_app
+                                  (expr_lambda
+                                    (type_lambda_bndr
+                                      (varty))
+                                    (value_lambda_bndr
+                                      (varid)
+                                      (type
                                         (tycon
                                           (datacon
-                                            (conid))))
-                                      (coercion_kind
-                                        (type
-                                          (tycon
-                                            (datacon
-                                              (conid))))
-                                        (eq_rel)
-                                        (type
-                                          (type_parens
-                                            (type
-                                              (type_forall
-                                                (varty)
-                                                (type
-                                                  (fun_type
-                                                    (tycon
-                                                      (datacon
-                                                        (conid)))
-                                                    (varty)
-                                                    (type
-                                                      (tycon
-                                                        (datacon
-                                                          (conid)))
-                                                      (varty))))))))))))))
-                            (type
-                              (varty))
-                            (expr
-                              (expr_parens
-                                (expr_lambda
-                                  (value_lambda_bndr
-                                    (varid)
-                                    (type
-                                      (tycon
-                                        (datacon
-                                          (conid)))))
-                                  (expr
-                                    (expr_case
-                                      (expr
+                                            (conid)))
+                                        (varty)))
+                                    (expr
+                                      (expr_parens
                                         (expr_cast
                                           (expr
-                                            (variable
-                                              (varid)))
+                                            (varid))
                                           (coercion_and_kind
                                             (co_axiom
                                               (tycon
                                                 (datacon
                                                   (conid))))
-                                            (co_refl
-                                              (type
-                                                (tycon))
-                                              (role))
-                                            (co_refl
-                                              (type
-                                                (tycon
-                                                  (datacon
-                                                    (conid))))
-                                              (role))
-                                            (co_refl
-                                              (type
-                                                (ticked_datacon
-                                                  (datacon
-                                                    (conid)))
-                                                (literal
-                                                  (string_lit))
-                                                (ticked_datacon
-                                                  (datacon
-                                                    (conid)))
-                                                (ticked_datacon
-                                                  (datacon
-                                                    (conid))))
-                                              (role))
-                                            (co_refl
-                                              (type
-                                                (tycon
-                                                  (datacon
-                                                    (conid))))
-                                              (role))
-                                            (co_refl
-                                              (type
-                                                (varty))
-                                              (role))
                                             (coercion_kind
                                               (type
                                                 (tycon
                                                   (datacon
-                                                    (conid)))
-                                                (tycon
-                                                  (datacon
-                                                    (conid)))
-                                                (type_parens
-                                                  (type
-                                                    (ticked_datacon
-                                                      (datacon
-                                                        (conid)))
-                                                    (literal
-                                                      (string_lit))
-                                                    (ticked_datacon
-                                                      (datacon
-                                                        (conid)))
-                                                    (ticked_datacon
-                                                      (datacon
-                                                        (conid)))))
-                                                (tycon
-                                                  (datacon
-                                                    (conid)))
-                                                (varty))
+                                                    (conid))))
                                               (eq_rel)
                                               (type
-                                                (tycon
-                                                  (datacon
-                                                    (conid)))
-                                                (varty))))))
-                                      (case_alt
-                                        (pat
-                                          (con_pat
+                                                (type_parens
+                                                  (type
+                                                    (type_forall
+                                                      (varty)
+                                                      (type
+                                                        (fun_type
+                                                          (tycon
+                                                            (datacon
+                                                              (conid)))
+                                                          (varty)
+                                                          (type
+                                                            (tycon
+                                                              (datacon
+                                                                (conid)))
+                                                            (varty))))))))))))))
+                                  (type
+                                    (varty))
+                                  (expr
+                                    (expr_parens
+                                      (expr_lambda
+                                        (value_lambda_bndr
+                                          (varid)
+                                          (type
                                             (tycon
                                               (datacon
                                                 (conid)))))
                                         (expr
-                                          (fun_app
-                                            (variable
-                                              (varid))
+                                          (expr_case
                                             (expr
-                                              (variable
-                                                (varid)))))))))))))
+                                              (expr_cast
+                                                (expr
+                                                  (varid))
+                                                (coercion_and_kind
+                                                  (co_axiom
+                                                    (tycon
+                                                      (datacon
+                                                        (conid))))
+                                                  (co_refl
+                                                    (type
+                                                      (tycon))
+                                                    (role))
+                                                  (co_refl
+                                                    (type
+                                                      (tycon
+                                                        (datacon
+                                                          (conid))))
+                                                    (role))
+                                                  (co_refl
+                                                    (type
+                                                      (ticked_datacon
+                                                        (datacon
+                                                          (conid)))
+                                                      (literal
+                                                        (string_lit))
+                                                      (ticked_datacon
+                                                        (datacon
+                                                          (conid)))
+                                                      (ticked_datacon
+                                                        (datacon
+                                                          (conid))))
+                                                    (role))
+                                                  (co_refl
+                                                    (type
+                                                      (tycon
+                                                        (datacon
+                                                          (conid))))
+                                                    (role))
+                                                  (co_refl
+                                                    (type
+                                                      (varty))
+                                                    (role))
+                                                  (coercion_kind
+                                                    (type
+                                                      (tycon
+                                                        (datacon
+                                                          (conid)))
+                                                      (tycon
+                                                        (datacon
+                                                          (conid)))
+                                                      (type_parens
+                                                        (type
+                                                          (ticked_datacon
+                                                            (datacon
+                                                              (conid)))
+                                                          (literal
+                                                            (string_lit))
+                                                          (ticked_datacon
+                                                            (datacon
+                                                              (conid)))
+                                                          (ticked_datacon
+                                                            (datacon
+                                                              (conid)))))
+                                                      (tycon
+                                                        (datacon
+                                                          (conid)))
+                                                      (varty))
+                                                    (eq_rel)
+                                                    (type
+                                                      (tycon
+                                                        (datacon
+                                                          (conid)))
+                                                      (varty))))))
+                                            (case_alt
+                                              (pat
+                                                (con_pat
+                                                  (tycon
+                                                    (datacon
+                                                      (conid)))))
+                                              (expr
+                                                (fun_app
+                                                  (varid)
+                                                  (expr
+                                                    (varid))))))))))))
+                              (ERROR)
+                              (ERROR)
+                              (coercion_and_kind
+                                (co_axiom
+                                  (tycon
+                                    (datacon
+                                      (conid))))
+                                (ERROR)
+                                (coercion_kind
+                                  (type
+                                    (type_parens
+                                      (type
+                                        (type_forall
+                                          (varty)
+                                          (type
+                                            (fun_type
+                                              (tycon
+                                                (datacon
+                                                  (conid)))
+                                              (varty)
+                                              (type
+                                                (tycon
+                                                  (datacon
+                                                    (conid)))
+                                                (varty))))))))
+                                  (eq_rel)
+                                  (type
+                                    (tycon
+                                      (datacon
+                                        (conid))))))))))
+                      (ERROR)
+                      (coercion_and_kind
+                        (co_axiom
+                          (tycon
+                            (datacon
+                              (conid))))
                         (ERROR)
-                        (ERROR)
-                        (coercion_and_kind
-                          (co_axiom
+                        (co_refl
+                          (type
+                            (tycon))
+                          (role))
+                        (coercion_kind
+                          (type
                             (tycon
                               (datacon
-                                (conid))))
-                          (ERROR)
-                          (coercion_kind
-                            (type
-                              (type_parens
-                                (type
-                                  (type_forall
-                                    (varty)
-                                    (type
-                                      (fun_type
-                                        (tycon
-                                          (datacon
-                                            (conid)))
-                                        (varty)
-                                        (type
-                                          (tycon
-                                            (datacon
-                                              (conid)))
-                                          (varty))))))))
-                            (eq_rel)
-                            (type
-                              (tycon
-                                (datacon
-                                  (conid))))))))))
-                (ERROR)
-                (coercion_and_kind
-                  (co_axiom
-                    (tycon
-                      (datacon
-                        (conid))))
-                  (ERROR)
-                  (co_refl
-                    (type
-                      (tycon))
-                    (role))
-                  (coercion_kind
-                    (type
-                      (tycon
-                        (datacon
-                          (conid)))
-                      (tycon))
-                    (eq_rel)
-                    (type
-                      (tycon
-                        (datacon
-                          (conid)))
-                      (tycon))))))))))))
+                                (conid)))
+                            (tycon))
+                          (eq_rel)
+                          (type
+                            (tycon
+                              (datacon
+                                (conid)))
+                            (tycon)))))))))))))))

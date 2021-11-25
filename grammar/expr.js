@@ -89,7 +89,10 @@ module.exports = {
     $.expr_let,
     $.expr_cast,
     $.literal,
-    $.variable,
+    seq(
+        optional($._qualifying_module),
+        choice($.varid, $.conid),
+    ),
   ),
 
   _value_arg: $ => $.expr,

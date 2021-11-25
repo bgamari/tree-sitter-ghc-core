@@ -27,8 +27,7 @@ hi = hi `cast` (GHC.Generics.N:M1[0]
     (expr
       (expr_cast
         (expr
-          (variable
-            (varid)))
+          (varid))
         (coercion_and_kind
           (co_axiom
             (tycon
