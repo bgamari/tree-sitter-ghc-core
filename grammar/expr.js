@@ -77,7 +77,7 @@ module.exports = {
       $.expr,
   ),
 
-  expr_parens: $ => parens($._expr3),
+  expr_parens: $ => parens($._expr1),
 
   _expr4: $ => choice(
     $.expr_parens,
@@ -87,7 +87,6 @@ module.exports = {
         choice($.varid, $.conid),
     ),
   ),
-
 
   _type_arg: $ => seq('@', $._type2),
   _app_arg: $ => prec(2, choice($._type_arg, $._expr3)),
@@ -106,7 +105,7 @@ module.exports = {
   ),
 
   expr_cast: $ => seq(
-      $._expr1,
+      $._expr4,
       '`cast`',
       $.coercion_and_kind,
   ),
@@ -116,5 +115,5 @@ module.exports = {
       $._expr2,
   ),
 
-  expr: $ => prec.left($._expr1),
+  expr: $ => prec.right($._expr1),
 }

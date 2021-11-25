@@ -2,6 +2,7 @@
 regression3
 ================================================================================
 
+GHCi.Message.$dGBinaryPut80 :: Int
 GHCi.Message.$dGBinaryPut80 = (
       f @r_acyN 42
       `cast`
@@ -13,6 +14,13 @@ GHCi.Message.$dGBinaryPut80 = (
 
 (source_file
   (binding
+    (tysig
+      (variable
+        (varid))
+      (type
+        (tycon
+          (datacon
+            (conid)))))
     (variable
       (varid))
     (expr

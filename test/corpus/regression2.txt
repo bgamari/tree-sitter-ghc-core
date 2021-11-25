@@ -2,70 +2,123 @@
 regression2
 ================================================================================
 
+GHCi.Message.$dGBinaryPut80 :: Int
 GHCi.Message.$dGBinaryPut80
   = (Data.Binary.Put.PairS
          @()
          GHC.Tuple.()
-         ((\ (@r_acyN)
-             (eta3_acyO :: Data.ByteString.Builder.Internal.BuildStep r_acyN) ->
-             f @r_acyN 42)
-          `cast` (Sym (Data.ByteString.Builder.Internal.N:Builder[0])
-                  :: (forall r.  BuildStep r -> BuildStep r) ~R# Builder)))
-      `cast` (Sym (Data.Binary.Put.N:PutM[0]) <()>_N
-              :: Data.Binary.Put.PairS () ~R# PutM ())
+         (
+           (\ (@r_acyN) (eta3_acyO :: Data.ByteString.Builder.Internal.BuildStep r_acyN) ->
+                 f @r_acyN 42
+           )
+           `cast` (
+               Sym (Data.ByteString.Builder.Internal.N:Builder[0])
+               :: (forall r.  BuildStep r -> BuildStep r) ~R# Builder
+           )
+         )
+     ) `cast` (
+        Sym (Data.Binary.Put.N:PutM[0]) <()>_N
+              :: Data.Binary.Put.PairS () ~R# PutM ()
+      )
 
 --------------------------------------------------------------------------------
 
-(ERROR
-  (tysig
-    (variable
-      (varid))
-    (ERROR
-      (conid)
-      (tycon
-        (datacon
-          (conid)))
-      (conid)
-      (ERROR)
-      (expr_parens
-        (literal
-          (MISSING int_lit))
-        (varty))
-      (varid))
-    (type
-      (fun_type
+(source_file
+  (binding
+    (tysig
+      (variable
+        (varid))
+      (type
         (tycon
           (datacon
-            (conid)))
-        (varty)
-        (ERROR)
-        (type
-          (varty)
-          (ERROR
-            (UNEXPECTED 'r')
-            (UNEXPECTED 'a'))
-          (literal
-            (int_lit))))))
-  (ERROR
-    (tycon
-      (datacon
-        (conid)))
-    (tycon
-      (datacon
-        (conid)))
-    (int_lit)
-    (UNEXPECTED 'r')
-    (UNEXPECTED 'B')
-    (UNEXPECTED 'B')
-    (UNEXPECTED 'B')
-    (UNEXPECTED 'D')
-    (UNEXPECTED 'B')
-    (UNEXPECTED 'a')
-    (UNEXPECTED 'u'))
-  (int_lit)
-  (UNEXPECTED 'D')
-  (UNEXPECTED 'B')
-  (UNEXPECTED 'a')
-  (UNEXPECTED 'u')
-  (UNEXPECTED 'a')
-  (UNEXPECTED 'u'))
+            (conid)))))
+    (variable
+      (varid))
+    (expr
+      (expr_cast
+        (expr_parens
+          (conid)
+          (tycon
+            (datacon
+              (conid)))
+          (conid)
+          (expr_parens
+            (expr_cast
+              (expr_parens
+                (expr_lambda
+                  (type_lambda_bndr
+                    (varty))
+                  (value_lambda_bndr
+                    (varid)
+                    (type
+                      (tycon
+                        (datacon
+                          (conid)))
+                      (varty)))
+                  (expr
+                    (varid)
+                    (varty)
+                    (literal
+                      (int_lit)))))
+              (coercion_and_kind
+                (coercion
+                  (co_sym
+                    (co_parens
+                      (coercion
+                        (co_axiom
+                          (tycon
+                            (datacon
+                              (conid))))))))
+                (coercion_kind
+                  (type
+                    (type_parens
+                      (type
+                        (type_forall
+                          (varty)
+                          (type
+                            (fun_type
+                              (tycon
+                                (datacon
+                                  (conid)))
+                              (varty)
+                              (type
+                                (tycon
+                                  (datacon
+                                    (conid)))
+                                (varty))))))))
+                  (eq_rel)
+                  (type
+                    (tycon
+                      (datacon
+                        (conid)))))))))
+        (coercion_and_kind
+          (coercion
+            (co_sym
+              (co_parens
+                (coercion
+                  (co_axiom
+                    (tycon
+                      (datacon
+                        (conid))))))
+              (co_refl
+                (type
+                  (tycon
+                    (datacon
+                      (conid))))
+                (role))))
+          (coercion_kind
+            (type
+              (tycon
+                (datacon
+                  (conid)))
+              (tycon
+                (datacon
+                  (conid))))
+            (eq_rel)
+            (type
+              (tycon
+                (datacon
+                  (conid)))
+              (tycon
+                (datacon
+                  (conid))))))))))
