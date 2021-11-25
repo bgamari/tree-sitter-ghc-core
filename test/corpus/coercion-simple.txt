@@ -1,0 +1,41 @@
+================================================================================
+simple coercion
+================================================================================
+
+hi :: Int
+hi = 42 `cast` (<Int>_N :: Int ~N# Int)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binding
+    (tysig
+      (variable
+        (varid))
+      (type
+        (tycon
+          (datacon
+            (conid)))))
+    (variable
+      (varid))
+    (expr
+      (expr_cast
+        (expr
+          (literal
+            (int_lit)))
+        (coercion_and_kind
+          (co_refl
+            (tycon
+              (datacon
+                (conid)))
+            (role))
+          (coercion_kind
+            (type
+              (tycon
+                (datacon
+                  (conid))))
+            (eq_rel)
+            (type
+              (tycon
+                (datacon
+                  (conid))))))))))

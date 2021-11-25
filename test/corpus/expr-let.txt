@@ -1,0 +1,42 @@
+================================================================================
+let expression
+================================================================================
+
+hi :: Int
+hi =
+  let {
+    ds :: Data.ByteString.ByteString
+    ds = 42
+  } in 1
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binding
+    (tysig
+      (variable
+        (varid))
+      (type
+        (tycon
+          (datacon
+            (conid)))))
+    (variable
+      (varid))
+    (expr
+      (expr_let
+        (binding
+          (tysig
+            (variable
+              (varid))
+            (type
+              (tycon
+                (datacon
+                  (conid)))))
+          (variable
+            (varid))
+          (expr
+            (literal
+              (int_lit))))
+        (expr
+          (literal
+            (int_lit)))))))

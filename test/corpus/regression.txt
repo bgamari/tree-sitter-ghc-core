@@ -1,0 +1,88 @@
+================================================================================
+regression1
+================================================================================
+
+hi :: Int
+hi = hi `cast` (GHC.Generics.N:M1[0]
+                       <*>_N
+                       <C>_P
+                       <'MetaCons "TSO" 'PrefixI 'False>_P
+                       <U1>_R <a1_acyv>_N
+                   :: M1 C ('MetaCons "TSO" 'PrefixI 'False) U1 a1_acyv
+                      ~R# U1 a1_acyv)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binding
+    (tysig
+      (variable
+        (varid))
+      (type
+        (tycon
+          (datacon
+            (conid)))))
+    (variable
+      (varid))
+    (expr
+      (expr_cast
+        (expr
+          (variable
+            (varid)))
+        (coercion_and_kind
+          (co_axiom
+            (tycon
+              (datacon
+                (conid))))
+          (co_refl
+            (tycon)
+            (role))
+          (co_refl
+            (tycon
+              (datacon
+                (conid)))
+            (role))
+          (ERROR
+            (UNEXPECTED 'M')
+            (UNEXPECTED 'S')
+            (UNEXPECTED 'r'))
+          (co_refl
+            (tycon
+              (datacon
+                (conid)))
+            (role))
+          (ERROR
+            (UNEXPECTED 'a')
+            (int_lit)
+            (UNEXPECTED 'a'))
+          (coercion_kind
+            (type
+              (tycon
+                (datacon
+                  (conid)))
+              (tycon
+                (datacon
+                  (conid)))
+              (type_parens
+                (type
+                  (ticked_datacon
+                    (datacon
+                      (conid)))
+                  (literal
+                    (string_lit))
+                  (ticked_datacon
+                    (datacon
+                      (conid)))
+                  (ticked_datacon
+                    (datacon
+                      (conid)))))
+              (tycon
+                (datacon
+                  (conid)))
+              (varty))
+            (eq_rel)
+            (type
+              (tycon
+                (datacon
+                  (conid)))
+              (varty))))))))
