@@ -25,9 +25,10 @@ hi = 42 `cast` (<Int>_N :: Int ~N# Int)
             (int_lit)))
         (coercion_and_kind
           (co_refl
-            (tycon
-              (datacon
-                (conid)))
+            (type
+              (tycon
+                (datacon
+                  (conid))))
             (role))
           (coercion_kind
             (type

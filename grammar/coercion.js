@@ -3,7 +3,7 @@ const {parens, angle_brackets} = require('./util.js')
 module.exports = {
     co_var: $ => $.varid,
 
-    co_refl: $ => seq(angle_brackets($.tycon), $.role),
+    co_refl: $ => seq(angle_brackets($.type), $.role),
 
     co_sym: $ => seq('Sym', $._coercion1),
 

@@ -35,26 +35,39 @@ hi = hi `cast` (GHC.Generics.N:M1[0]
               (datacon
                 (conid))))
           (co_refl
-            (tycon)
+            (type
+              (tycon))
             (role))
           (co_refl
-            (tycon
-              (datacon
-                (conid)))
+            (type
+              (tycon
+                (datacon
+                  (conid))))
             (role))
-          (ERROR
-            (UNEXPECTED 'M')
-            (UNEXPECTED 'S')
-            (UNEXPECTED 'r'))
           (co_refl
-            (tycon
-              (datacon
-                (conid)))
+            (type
+              (ticked_datacon
+                (datacon
+                  (conid)))
+              (literal
+                (string_lit))
+              (ticked_datacon
+                (datacon
+                  (conid)))
+              (ticked_datacon
+                (datacon
+                  (conid))))
             (role))
-          (ERROR
-            (UNEXPECTED 'a')
-            (int_lit)
-            (UNEXPECTED 'a'))
+          (co_refl
+            (type
+              (tycon
+                (datacon
+                  (conid))))
+            (role))
+          (co_refl
+            (type
+              (varty))
+            (role))
           (coercion_kind
             (type
               (tycon
