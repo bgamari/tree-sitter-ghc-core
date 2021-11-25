@@ -8,8 +8,16 @@ const idinfo = require('./grammar/idinfo.js')
 
 module.exports = grammar({
     name: 'ghccore',
+
+    extras: $ => [
+        /\s/,
+        $.line_comment
+    ],
+
     rules: {
         source_file: $ => $.binding,
+
+        line_comment: _ => token(seq('--', /.*/)),
 
         ...literal,
         ...expr,

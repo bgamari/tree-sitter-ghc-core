@@ -5,13 +5,20 @@ module.exports = {
 
     idinfo_item: $ => choice(
         'LclId',
-        'GblId',
+        seq('GblId', brackets(/[^\]]/)),
         seq('Str=', $.strictness_sig),
+        seq('Caf=NoCafRefs'),
         seq('Arity=', $.arity),
         seq('Cpr=', $.cpr_sig),
         seq('Unf=', $.unfolding),
         seq('Occ=', /[^,\]]+/),
         seq('OS=OneShot'),
+        seq('InlPrag=', $.inline_pragma),
+    ),
+
+    inline_pragma: _ => choice(
+        seq('INLINE', brackets(choice('final', /[\d]+/)), optional('CONLIKE')),
+        seq('NOINLINE'),
     ),
 
     arity: _ => /[\d]+/,
