@@ -21,11 +21,8 @@ hi = hi 42 "hi" @a
     (expr
       (fun_app
         (varid)
-        (expr
-          (literal
-            (int_lit)))
-        (expr
-          (literal
-            (string_lit)))
-        (type
-          (varty))))))
+        (literal
+          (int_lit))
+        (literal
+          (string_lit))
+        (varty)))))

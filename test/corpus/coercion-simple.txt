@@ -20,9 +20,8 @@ hi = 42 `cast` (<Int>_N :: Int ~N# Int)
       (varid))
     (expr
       (expr_cast
-        (expr
-          (literal
-            (int_lit)))
+        (literal
+          (int_lit))
         (coercion_and_kind
           (coercion
             (co_refl

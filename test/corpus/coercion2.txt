@@ -24,8 +24,7 @@ hi = x `cast` (Data.ByteString.Builder.Internal.N:Builder[0]
       (varid))
     (expr
       (expr_cast
-        (expr
-          (varid))
+        (varid)
         (coercion_and_kind
           (coercion
             (co_axiom
