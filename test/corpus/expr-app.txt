@@ -19,10 +19,9 @@ hi = hi 42 "hi" @a
     (variable
       (varid))
     (expr
-      (fun_app
-        (varid)
-        (literal
-          (int_lit))
-        (literal
-          (string_lit))
-        (varty)))))
+      (varid)
+      (literal
+        (int_lit))
+      (literal
+        (string_lit))
+      (varty))))

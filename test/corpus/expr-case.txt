@@ -29,14 +29,15 @@ hi = case 42 of {
         (case_alt
           (default_pat)
           (expr
-            (fun_app
-              (literal
-                (int_lit))
-              (conid)
-              (varid))))
+            (literal
+              (int_lit))))
         (case_alt
           (pat
-            (MISSING int_lit))
+            (con_pat
+              (tycon
+                (datacon
+                  (conid)))
+              (varid)))
           (expr
             (literal
               (int_lit))))))))

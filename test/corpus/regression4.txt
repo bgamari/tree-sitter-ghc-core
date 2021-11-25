@@ -1,0 +1,71 @@
+================================================================================
+regression4
+================================================================================
+
+hi :: Int
+hi = case (put @w_acyu $dBinary8_acyy code_acyC)
+                 `cast` (Data.Binary.Put.N:PutM[0] <()>_N
+                         :: PutM () ~R# Data.Binary.Put.PairS ())
+            of
+            { Data.Binary.Put.PairS ds5_acyK w1_acyL -> w1_acy }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binding
+    (tysig
+      (variable
+        (varid))
+      (type
+        (tycon
+          (datacon
+            (conid)))))
+    (variable
+      (varid))
+    (expr
+      (expr_case
+        (expr
+          (expr_cast
+            (expr_parens
+              (varid)
+              (varty)
+              (varid)
+              (varid))
+            (coercion_and_kind
+              (coercion
+                (co_axiom
+                  (tycon
+                    (datacon
+                      (conid))))
+                (co_refl
+                  (type
+                    (tycon
+                      (datacon
+                        (conid))))
+                  (role)))
+              (coercion_kind
+                (type
+                  (tycon
+                    (datacon
+                      (conid)))
+                  (tycon
+                    (datacon
+                      (conid))))
+                (eq_rel)
+                (type
+                  (tycon
+                    (datacon
+                      (conid)))
+                  (tycon
+                    (datacon
+                      (conid))))))))
+        (case_alt
+          (pat
+            (con_pat
+              (tycon
+                (datacon
+                  (conid)))
+              (varid)
+              (varid)))
+          (expr
+            (varid)))))))

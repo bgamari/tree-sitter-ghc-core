@@ -28,6 +28,7 @@ module.exports = grammar({
         [$._type_app],
         [$.coercion, $._co_app],
         [$._co_app],
-        [$._expr2, $.fun_app],
+        [$._fun_app, $._expr3],
+        [$._fun_app],
     ],
 })

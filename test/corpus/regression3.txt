@@ -1,0 +1,57 @@
+================================================================================
+regression3
+================================================================================
+
+GHCi.Message.$dGBinaryPut80 = (
+      f @r_acyN 42
+      `cast`
+      (Sym (Data.ByteString.Builder.Internal.N:Builder[0])
+          :: (forall r.  BuildStep r -> BuildStep r) ~R# Builder)
+  )
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (binding
+    (variable
+      (varid))
+    (expr
+      (expr_cast
+        (expr_parens
+          (varid)
+          (varty)
+          (literal
+            (int_lit))
+          (MISSING "))
+        (coercion_and_kind
+          (coercion
+            (co_sym
+              (co_parens
+                (coercion
+                  (co_axiom
+                    (tycon
+                      (datacon
+                        (conid))))))))
+          (coercion_kind
+            (type
+              (type_parens
+                (type
+                  (type_forall
+                    (varty)
+                    (type
+                      (fun_type
+                        (tycon
+                          (datacon
+                            (conid)))
+                        (varty)
+                        (type
+                          (tycon
+                            (datacon
+                              (conid)))
+                          (varty))))))))
+            (eq_rel)
+            (type
+              (tycon
+                (datacon
+                  (conid)))))))))
+  (ERROR))

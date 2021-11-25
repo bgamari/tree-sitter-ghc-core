@@ -46,12 +46,6 @@ module.exports = {
       $.expr,
   ),
 
-  expr_cast: $ => prec(-1, seq(
-      $._expr2,
-      '`cast`',
-      $.coercion_and_kind,
-  )),
-
   _app: $ => seq(
       $.expr,
   ),
@@ -85,12 +79,8 @@ module.exports = {
 
   expr_parens: $ => parens($._expr3),
 
-  _expr3: $ => choice(
+  _expr4: $ => choice(
     $.expr_parens,
-    $.expr_lambda,
-    $.expr_case,
-    $.expr_let,
-    $.expr_cast,
     $.literal,
     seq(
         optional($._qualifying_module),
@@ -98,18 +88,33 @@ module.exports = {
     ),
   ),
 
+
   _type_arg: $ => seq('@', $._type2),
-
   _app_arg: $ => prec(2, choice($._type_arg, $._expr3)),
+  _fun_app: $ => seq($._expr4, repeat1($._app_arg)),
 
-  fun_app: $ => prec(1, seq($._expr3, repeat1($._app_arg))),
-
-  _expr2: $ => choice(
-      $.fun_app,
-      $._expr3,
+  _expr3: $ => choice(
+      $._expr4,
+      $._fun_app,
   ),
 
-  _expr1: $ => $._expr2,
+  _expr2: $ => choice(
+    $.expr_lambda,
+    $.expr_case,
+    $.expr_let,
+    $._expr3,
+  ),
 
-  expr: $ => $._expr1,
+  expr_cast: $ => seq(
+      $._expr1,
+      '`cast`',
+      $.coercion_and_kind,
+  ),
+
+  _expr1: $ => choice(
+      $.expr_cast,
+      $._expr2,
+  ),
+
+  expr: $ => prec.left($._expr1),
 }
