@@ -4,8 +4,8 @@ case expression
 
 hi :: Int
 hi = case 42 of {
-    __DEFAULT -> { 42 }
-    Just a -> { 5 }
+    __DEFAULT -> 42
+    Just a -> 5
   }
 
 --------------------------------------------------------------------------------
@@ -34,7 +34,9 @@ hi = case 42 of {
         (case_alt
           (pat
             (con_pat
-              (conid)
+              (tycon
+                (datacon
+                  (conid)))
               (varid)))
           (expr
             (literal

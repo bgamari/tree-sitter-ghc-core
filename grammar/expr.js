@@ -8,10 +8,10 @@ mb_qualified = ($, rule) => choice(
 const {parens, braces, sep1} = require('./util.js')
 
 module.exports = {
-  varid: _ => /[_a-z\$](\w|'|\$)*#?/,
-  varty: _ => /[_a-z\$](\w|'|\$)*#?/,
+  varid: _ => /[_a-z\$][\w_\$]*#?/,
+  varty: _ => /[_a-z\$][\w_\$]*#?/,
   // This is a bit of a lie but meh
-  _modid: _ => /[A-Z](_|\w)+\./,
+  _modid: _ => /[A-Z](\w|_)+\./,
   _qualifying_module: $ => repeat1($._modid),
   conid: _ => /[A-Z](\w|')*#?/,
   datacon: $ => seq(
@@ -22,15 +22,16 @@ module.exports = {
 
   expr_case: $ => seq(
       'case',
-      $.expr,
+      field('scrutinee', $.expr),
       'of',
-      braces(repeat($.case_alt)),
+      field('case_bndr', optional($.varid)),
+      field('alts', braces(repeat($.case_alt))),
   ),
 
   case_alt: $ => seq(
       choice($.default_pat, $.pat),
       '->',
-      braces($.expr),
+      $.expr,
   ),
 
   default_pat: _ => '__DEFAULT',
@@ -67,10 +68,10 @@ module.exports = {
       $.type,
   )),
 
-  type_lambda_bndr: $ => seq(
+  type_lambda_bndr: $ => parens(seq(
       '@',
-      parens($.varty),
-  ),
+      $.varty,
+  )),
 
   expr_lambda: $ => seq(
       '\\',
@@ -84,11 +85,11 @@ module.exports = {
   _aexpr: $ => choice(
     $.expr_parens,
     $.expr_lambda,
-    $.literal,
-    $.variable,
     $.expr_case,
     $.expr_let,
     $.expr_cast,
+    $.literal,
+    $.variable,
   ),
 
   _value_arg: $ => $.expr,

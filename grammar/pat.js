@@ -1,6 +1,6 @@
 module.exports = {
     con_pat: $ => seq(
-        $.conid,
+        $.tycon,
         repeat($.varid),
     ),
 

@@ -5,11 +5,15 @@ module.exports = {
 
     co_refl: $ => seq(angle_brackets($.tycon), $.role),
 
-    co_sym: $ => seq('Sym', $.coercion),
+    co_sym: $ => seq('Sym', $._coercion1),
 
     role: _ => seq('_', choice('R', 'N', 'P')),
 
-    axiom: $ => seq($.tycon, brackets(/[0-9]+/)),
+    co_axiom: $ => seq(
+        $.tycon,
+        optional(/:[\w\d]+/),
+        brackets(/[0-9]+/)
+    ),
 
     eq_rel: $ => choice(
         '~R#',
@@ -23,7 +27,7 @@ module.exports = {
     ),
 
     coercion_and_kind: $ => parens(seq(
-        $.coercion,
+        $._coercion1,
         '::',
         $.coercion_kind,
     )),
@@ -31,9 +35,10 @@ module.exports = {
     _coercion2: $ => choice(
         $.co_sym,
         $.co_refl,
+        $.co_axiom,
     ),
 
-    _co_app: $ => prec.left('app-co', seq($._coercion1, repeat1($.coercion))),
+    _co_app: $ => prec.left('app-co', seq($._coercion2, repeat1($._coercion1))),
 
     _coercion1: $ => prec('co', choice(
         $._co_app,

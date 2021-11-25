@@ -1,7 +1,7 @@
 const {parens, braces, sep1} = require('./util.js')
 
 module.exports = {
-    tycon: $ => $.datacon,
+    tycon: $ => choice($.datacon, '*'),
 
     ticked_datacon: $ => seq("'", $.datacon),
 
