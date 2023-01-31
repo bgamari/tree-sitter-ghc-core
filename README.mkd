@@ -1,0 +1,10 @@
+# tree-sitter-ghc-core
+
+An (incomplete) `tree-sitter` grammar for GHC Core.
+
+## Notes
+
+To test:
+```
+nix shell nixpkgs#tree-sitter nixpkgs#nodejs -c tree-sitter test
+```
